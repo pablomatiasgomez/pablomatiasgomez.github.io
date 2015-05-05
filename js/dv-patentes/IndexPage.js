@@ -9,7 +9,7 @@ var IndexPage = function(_options) {
 	var bindEvents = function() {
 		var $input = $("input[name='patente']");
 		var $submit = $("button.submit");
-		var $mesage = $(".alert-success.message");
+		var $message = $(".alert-success.message");
 
 		$input.on("keyup", function(e) {
 			if (e.keyCode == KEY_ENTER) {
@@ -21,7 +21,7 @@ var IndexPage = function(_options) {
 			var dv = getDV($input.val());
 			var message = "The code is <strong>" + dv + "</strong>";
 
-			$mesage.find("span.detail").html(message);
+			$message.find("span.detail").html(message);
 			$message.slideDown();
 		});
 	};
