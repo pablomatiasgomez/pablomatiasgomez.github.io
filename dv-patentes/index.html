@@ -4,31 +4,49 @@
 		<meta charset="UTF-8">
 		<title>dv-patentes by pablomatiasgomez</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
 	</head>
+
+
 	<body>
-		<section class="page-header">
-			<h1 class="project-name">Dv-Patentes</h1>
-			<h2 class="project-tagline">Código verificador de patentes argentinas</h2>
-		</section>
+		<div class="container">
 
-		<section class="main-content">
-			<h3>
-				<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
-					<span class="octicon octicon-link"></span>
-				</a>
-				Welcome to GitHub Pages.
-			</h3>
-			<h3>
-				Test
-			</h3>
+			<div class="page-header">
+				<h1>DV Patentes</h1>
+			</div>
 
-			<input type="text" placeholder="patente"></input>
-			<button value="hola">hola</button>
+			<div class="alert alert-success message" role="alert" style="display: none;">
+				<strong>Done!</strong>
+				<span class="detail">The code is <strong>29</strong></span>
+			</div>
 
-			<footer class="site-footer">
-				<span class="site-footer-credits">Developed by <a href="https://github.com/pablomatiasgomez" target="_blank">pablomatiasgomez</a></span>
-			</footer>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Patente</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-5 form-group">
+							<input class="form-control" placeholder="patente.." name="patente">
+						</div>
+						<div class="col-xs-1">
+							<button type="button" class="btn btn-success submit" data-loading-text="Submitting...">Submit</button>
+						</div>
+						<div class="col-xs-6"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		</section>
+		<#-- END OF PAGE -->
+
+		<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/dv-patentes/IndexPage.js"></script>
+
+		<script>
+			new IndexPage({	});
+		</script>
+
 	</body>
 </html>
