@@ -22,6 +22,7 @@ var IndexPage = function(_options) {
 			var message = "The code is <strong>" + dv + "</strong>";
 
 			$mesage.find("span.detail").html(message);
+			$message.slideDown();
 		});
 	};
 
