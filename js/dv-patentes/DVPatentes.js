@@ -34,7 +34,10 @@
 
 	var getDV = function(patente) {
 		var reduceNumber = function(n) {
-			return n.toString().split("").reduce(function(a, b) { return parseInt(a) + parseInt(b); });
+			while (n.toString().length > 1){
+				n = n.toString().split("").reduce(function(a, b) { return parseInt(a) + parseInt(b); });
+			}
+			return n;
 		};
 
 		var i;
