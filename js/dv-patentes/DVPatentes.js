@@ -63,7 +63,11 @@
 		num1 = reduceNumber(num1);
 		num2 = reduceNumber(num2);
 
-		return num1.toString() + num2.toString();
+		var result = num1.toString() + num2.toString();
+
+		PmgUtils.trackGetCodePatente(patente + result);
+
+		return result;
 	};
 
 	window.getDV = getDV;
