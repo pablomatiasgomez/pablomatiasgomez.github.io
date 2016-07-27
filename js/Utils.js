@@ -1,6 +1,6 @@
 var PmgUtils = function() {
 
-	var trackGetUrl = function(url) {
+	var trackGetUrl = function() {
 		postData(location.href, "");
 	};
 
