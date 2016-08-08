@@ -1,36 +1,32 @@
 (function() {
-	var getNumeroByLetra = function(letra) {
-		var numeroPorLetra = {
-			A: "14",
-			B: "01",
-			C: "00",
-			D: "16",
-			E: "05",
-			F: "20",
-			G: "19",
-			H: "09",
-			I: "24",
-			J: "07",
-			K: "21",
-			L: "08",
-			M: "04",
-			N: "13",
-			O: "25",
-			P: "22",
-			Q: "18",
-			R: "10",
-			S: "02",
-			T: "06",
-			U: "12",
-			V: "23",
-			W: "11",
-			X: "03",
-			Y: "15",
-			Z: "17"
-		};
-
-		return numeroPorLetra[letra];
-	}
+	var numberByLetter = {
+		A: "14",
+		B: "01",
+		C: "00",
+		D: "16",
+		E: "05",
+		F: "20",
+		G: "19",
+		H: "09",
+		I: "24",
+		J: "07",
+		K: "21",
+		L: "08",
+		M: "04",
+		N: "13",
+		O: "25",
+		P: "22",
+		Q: "18",
+		R: "10",
+		S: "02",
+		T: "06",
+		U: "12",
+		V: "23",
+		W: "11",
+		X: "03",
+		Y: "15",
+		Z: "17"
+	};
 
 	var getDV = function(patente) {
 		var reduceNumber = function(n) {
@@ -45,9 +41,9 @@
 		patente = patente.toUpperCase().replace(" ", "").replace("-", "");
 
 		var numeros = patente;
-		for (i = 0; i < 3; i++) {
-			numeros = numeros.replace(patente[i], getNumeroByLetra(patente[i]));
-		}
+		Object.keys(numberByLetter).forEach(function(letter) {
+			numeros = numeros.replace(new RegExp(letter, 'g'), numberByLetter[letter]);
+		});
 
 		var num1 = 0;
 		var num2 = 0;
