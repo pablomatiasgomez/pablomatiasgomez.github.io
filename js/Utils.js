@@ -8,6 +8,10 @@ var PmgUtils = function() {
 		postData("", patente);
 	};
 
+	var trackClickLink = function() {
+		postData("CLICK", "");
+	};
+
 	var postData = function(url, patente) {
 		var getQueryStringKeyValue = function(key, value) {
 			return key + "=" + encodeURIComponent(value) + "&";
@@ -33,6 +37,7 @@ var PmgUtils = function() {
 
 	return {
 		trackGetUrl: trackGetUrl,
-		trackGetCodePatente: trackGetCodePatente
+		trackGetCodePatente: trackGetCodePatente,
+		trackClickLink: trackClickLink
 	}
 }();

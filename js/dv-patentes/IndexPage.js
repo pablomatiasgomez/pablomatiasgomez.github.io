@@ -26,7 +26,7 @@ var IndexPage = function(_options) {
 		});
 
 		$("a.chrome-link").on("click", function() {
-			console.log("t");
+			PmgUtils.trackClickLink();
 		});
 	};
 
