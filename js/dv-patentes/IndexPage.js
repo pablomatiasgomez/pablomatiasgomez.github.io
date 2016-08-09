@@ -24,6 +24,10 @@ var IndexPage = function(_options) {
 			$message.find("span.detail").html(message);
 			$message.slideDown();
 		});
+
+		$("a.chrome-link").on("click", function() {
+			console.log("t");
+		});
 	};
 
 	(function() {
