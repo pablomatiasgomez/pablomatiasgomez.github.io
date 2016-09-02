@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>McExperiencia by pablomatiasgomez</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="screen">
+	</head>
+
+	<body>
+		<div class="container">
+
+			<div class="page-header">
+				<h1>McExperiencia</h1>
+			</div>
+
+			<div class="alert alert-success message" role="alert" style="display: none;">
+				<strong>Listo!</strong>
+				<span class="detail">El código es <strong>29</strong></span>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ingresá los datos del ticket y obtené un 2x1 en cuarto de libra! Recordá imprimir el cupón y llevar el ticket.</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-5 form-group">
+							<input class="form-control" placeholder="Nro de ticket.." name="ticket-number">
+						</div>
+						<div class="col-xs-1">
+							<button type="button" class="btn btn-success submit" data-loading-text="Submitting...">Obtener cupón!</button>
+						</div>
+						<div class="col-xs-6"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- END OF PAGE -->
+
+		<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/PmgUtils.js"></script>
+		<script type="text/javascript" src="/js/mcexperiencia/McExperienciaIndexPage.js"></script>
+
+		<script>
+			new McExperienciaIndexPage({ });
+		</script>
+
+	</body>
+</html>

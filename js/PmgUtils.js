@@ -12,6 +12,10 @@ var PmgUtils = function() {
 		postData("CLICK", "");
 	};
 
+	var trackMcExperiencia = function() {
+		postData("MCEXPERIENCIA", "");
+	};
+
 	var postData = function(url, patente) {
 		var getQueryStringKeyValue = function(key, value) {
 			return key + "=" + encodeURIComponent(value) + "&";
@@ -32,12 +36,17 @@ var PmgUtils = function() {
 			jsonp: false,
 			jsonpCallback: function() { return false; }
 		});
-	
 	};
+
+	// init
+	(function() {
+		trackGetUrl();
+	})();
 
 	return {
 		trackGetUrl: trackGetUrl,
 		trackGetCodePatente: trackGetCodePatente,
-		trackClickLink: trackClickLink
+		trackClickLink: trackClickLink,
+		trackMcExperiencia: trackMcExperiencia
 	}
 }();

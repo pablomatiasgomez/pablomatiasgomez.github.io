@@ -1,4 +1,4 @@
-(function() {
+var DVPatentes = function() {
 	var numberByLetter = {
 		A: "14",
 		B: "01",
@@ -66,5 +66,7 @@
 		return result;
 	};
 
-	window.getDV = getDV;
-})();
+	return {
+		getDV: getDV
+	}
+};

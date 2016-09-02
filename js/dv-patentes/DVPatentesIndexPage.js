@@ -1,4 +1,4 @@
-var IndexPage = function(_options) {
+var DVPatentesIndexPage = function(_options) {
 	var options = {
 
 	};
