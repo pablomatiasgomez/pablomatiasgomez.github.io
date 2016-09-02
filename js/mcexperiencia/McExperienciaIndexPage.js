@@ -19,11 +19,34 @@ var McExperienciaIndexPage = function(_options) {
 
 		$submit.on("click", function() {
 			PmgUtils.trackMcExperiencia();
+			var ticketNumber = $input.val();
 			$container.load( "mcexperiencia.html", function() {
-				debugger;
+				$container.find(".ticket-number").text(ticketNumber);
+				$container.find(".codebar-number").text(getRandomCode());
+				$container.find(".date-from").text(getDateFrom());
+				$container.find(".date-to").text(getDateTo());
 			});
 		});
 	};
+
+	var getRandomCode = function() {
+		return Math.random().toString().replace("0.", "").substr(0, 10);
+	};
+
+	var getDateFrom = function() {
+		getFormattedDate(new Date());
+	};
+
+	var getDateTo = function() {
+		var nextWeek = new Date();
+		nextWeek.setDate(nextWeek.getDate() + 7);
+		getFormattedDate(nextWeek);
+	};
+
+	var getFormattedDate = function(date) {
+		return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+	};
+
 
 	(function() {
 		bindEvents();
