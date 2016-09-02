@@ -34,13 +34,13 @@ var McExperienciaIndexPage = function(_options) {
 	};
 
 	var getDateFrom = function() {
-		getFormattedDate(new Date());
+		return getFormattedDate(new Date());
 	};
 
 	var getDateTo = function() {
 		var nextWeek = new Date();
 		nextWeek.setDate(nextWeek.getDate() + 7);
-		getFormattedDate(nextWeek);
+		return getFormattedDate(nextWeek);
 	};
 
 	var getFormattedDate = function(date) {
