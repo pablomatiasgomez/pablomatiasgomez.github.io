@@ -1,6 +1,6 @@
 var DVPatentesIndexPage = function(_options) {
 	var options = {
-
+		dvPatentes: null
 	};
 	$.extend(options, _options);
 
@@ -18,7 +18,7 @@ var DVPatentesIndexPage = function(_options) {
 		});
 
 		$submit.on("click", function() {
-			var dv = getDV($input.val());
+			var dv = options.dvPatentes.getDV($input.val());
 			var message = "The code is <strong>" + dv + "</strong>";
 
 			$message.find("span.detail").html(message);
