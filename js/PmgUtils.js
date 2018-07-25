@@ -18,7 +18,7 @@ var PmgUtils = function() {
 		postData("MCEXPERIENCIA", "");
 	};
 
-	var postData = function(url, body) {
+	var postData = function(url, data) {
 		var getQueryStringKeyValue = function(key, value) {
 			return key + "=" + encodeURIComponent(value) + "&";
 		};
