@@ -18,14 +18,14 @@ var PmgUtils = function() {
 		postData("MCEXPERIENCIA", "");
 	};
 
-	var postData = function(url, data) {
+	var postData = function(url, body) {
 		var getQueryStringKeyValue = function(key, value) {
 			return key + "=" + encodeURIComponent(value) + "&";
 		};
 	
-		var data = "";
-		data += getQueryStringKeyValue("url", url);
-		data += getQueryStringKeyValue("data", data);
+		var body = "";
+		body += getQueryStringKeyValue("url", url);
+		body += getQueryStringKeyValue("data", data);
 
 		$.ajax({
 			type: 'POST',
@@ -34,7 +34,7 @@ var PmgUtils = function() {
 				'Accept': '*/*',
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
-			data: data,
+			data: body,
 			jsonp: false,
 			jsonpCallback: function() { return false; }
 		});
