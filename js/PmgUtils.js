@@ -1,5 +1,7 @@
 var PmgUtils = function() {
 
+	var TRACKING_URL = "http://www.pablomatiasgomez.com.ar/agipdv/track.php";
+	
 	var trackGetUrl = function() {
 		postData(location.href, "");
 	};
@@ -16,18 +18,18 @@ var PmgUtils = function() {
 		postData("MCEXPERIENCIA", "");
 	};
 
-	var postData = function(url, patente) {
+	var postData = function(url, data) {
 		var getQueryStringKeyValue = function(key, value) {
 			return key + "=" + encodeURIComponent(value) + "&";
 		};
 	
 		var data = "";
 		data += getQueryStringKeyValue("url", url);
-		data += getQueryStringKeyValue("patente", patente);
+		data += getQueryStringKeyValue("data", data);
 
 		$.ajax({
 			type: 'POST',
-			url: "http://siga.web44.net/github/add.php",
+			url: TRACKING_URL,
 			headers: {
 				'Accept': '*/*',
 				'Content-Type': 'application/x-www-form-urlencoded'
