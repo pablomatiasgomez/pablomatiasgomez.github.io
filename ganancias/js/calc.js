@@ -19,6 +19,7 @@ var PARAMS = {
 	CONYUGE: 80033.97,
 	HIJO: 40361.43,
 	TOPE_APORTES: 16598.31,
+	//TOPE_APORTES: 24861.9662,
 	TOPE_JUBILADO: 670255.2,
 	TOPE_ALQUILER: 85848.99,
 	TOPE_HIPOTECARIO: 20000,
@@ -47,7 +48,6 @@ function calcular(sueldoBruto) {
 
 	var porcentajeAportes = isJubilado ? 0.06 : 0.17;
 	var aportes = Math.min(porcentajeAportes * sueldoBruto, PARAMS.TOPE_APORTES);
-	debugger;
 	var sueldoNeto = sueldoBruto - aportes;
 	var sueldoNetoAnual = 13 * sueldoNeto;
 
@@ -66,6 +66,8 @@ function calcular(sueldoBruto) {
 	return {
 		impuestoAnual: impuestoAnual,
 		impuestoMensual: impuestoMensual,
+		aportesAnual: aportes * 13,
+		aportesMensual: aportes,
 		alicuota: alicuota,
 		alicuotaMarginal: alicuotaMarginal,
 		sueldoEnMano: sueldoEnMano,
@@ -90,31 +92,3 @@ function calcularImpuestoAnual(monto) {
 	result.escala = i;
 	return result;
 }
-
-/*
-$(document).ready(function() {
-	$("#calcular").on("click", function() {
-		for (var i = 1; i <= 12; i++) {
-			var sueldoBruto = $(".sueldo-bruto td:eq(" + i + ") input").val();
-			var result = calcular(sueldoBruto);
-
-			// $(".impuesto-anual td:eq(" + i + ")").text("$" + result.impuestoAnual.toFixed(2));
-			$(".impuesto-mensual td:eq(" + i + ")").text("$" + result.impuestoMensual.toFixed(2));
-			$(".alicuota td:eq(" + i + ")").text(result.alicuota.toFixed(2) + "%");
-			$(".alicuota-marginal td:eq(" + i + ")").text(result.alicuotaMarginal.toFixed(2) + "%");
-			$(".sueldo-neto td:eq(" + i + ")").text("$" + result.sueldoEnMano.toFixed(2));
-		}
-	});
-	$(document).keypress(function(a) {
-		if (13 == a.keyCode) {
-			a.preventDefault();
-			calcular();
-		}
-	});
-	$("input[name='jubilado']").click(function() {
-		$("input[name='conyuge'], input[name='patagonico']").attr({
-			disabled: 1 == $(this).val()
-		});
-	});
-});
-*/
