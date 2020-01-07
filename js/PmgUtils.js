@@ -34,9 +34,7 @@ var PmgUtils = function() {
 				'Accept': '*/*',
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
-			data: body,
-			jsonp: false,
-			jsonpCallback: function() { return false; }
+			data: body
 		});
 	};
 
